@@ -1,0 +1,35 @@
+<h2>create order</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form>
+            <div class="text-danger"></div>
+            <div class="form-group">
+                <label for="user" class="control-label">User</label>
+                <select [(ngModel)]="order.userid" name="user" class="form-control" >
+                    <option *ngFor="let i of UserList" [value]="i">{{i}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="amount" class="control-label">order amount</label>
+                <input type="number" min="100" max="1500000" [(ngModel)]="order.amount" name="amount" class="form-control" />
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="promocode" class="control-label">Promo code</label>
+                    <input [(ngModel)]="order.promocode" name="promocode" class="form-control" />
+                </div>
+                <div>
+                    <p name="error" [value]="conf"></p>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <button (click)="checkPromo()" class="btn btn-primary" >Check Promo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button (click)="Next()" class="btn btn-primary" >next</button>
+            </div>
+        </form>
+    </div>
+</div>

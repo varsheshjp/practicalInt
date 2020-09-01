@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Admin Dashboard</h2>
+    <div class="table" *ngIf="OrderList.length!=0" >
+        <table class="table table-hover">
+            <tr>
+                
+                <th>UserId</th>
+                <th>order ammount</th>
+                <th>applied promocode</th>
+                <th>total discount %</th>
+                <th>total value after discount</th>
+            </tr>
+            <tr *ngFor="let order of OrderList,index as i">
+                <td>{{order.userid}}</td>
+                <td>{{order.amount}}</td>
+                <td>{{order.promocode}}</td>
+                <td>{{order.totaldiscount}}</td>
+                <td>{{order.checkoutamount}}</td>
+            </tr>
+        </table>
+    </div>
+    <h6 *ngIf="OrderList.length==0" >None Order Created</h6>
+    <div>
+        <button style="margin:10px" class="btn btn-primary" (click)="CreateOrder()">Create order</button>
+    </div>
+</div>

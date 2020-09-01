@@ -1,0 +1,22 @@
+<h2>Promo Details</h2>
+<div class="container">
+    <div class="col-md-4">
+        <p>
+            promocode:       {{promo.promoCode}}<br>
+            startdate:       {{promo.startDate}}<br>
+            endDate:         {{promo.endDate}}<br>
+            gender:          {{promo.gender}}<br>
+            total generated: {{promo.maxPromo}}<br>
+            per user limit : {{promo.maxLimitUser}}<br>
+            discount %:      {{promo.price}}% <br>
+            used :           {{promo.usedPromo}}<br>
+        </p>
+        <p [(ngModel)]="error"></p>
+    </div><br>
+    <div>
+        <button style="margin:10px" class="btn btn-primary" (click)="Edit()">Edit</button>
+    </div>
+    <div>
+        <button style="margin:10px" class="btn btn-primary" (click)="Delete()">Delete</button>
+    </div>
+</div>

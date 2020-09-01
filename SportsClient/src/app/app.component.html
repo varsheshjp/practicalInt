@@ -1,0 +1,15 @@
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin:0px;padding:0px">
+    <div class="container">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <h3><a routerLink="/home" routerLinkActive="active" class="nav-link">MarketSite</a> </h3>
+      </li>
+    </ul>
+    <a *ngIf="isLoggedIn()" routerLink="/orders" class="btn btn-primary" routerLinkActive="active" class="nav-link">order</a>
+    <button *ngIf="isLoggedIn()" style="margin:10px;float:right" class="btn btn-danger" (click)="Logout()">LogOut</button>
+    </div>
+  </nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
